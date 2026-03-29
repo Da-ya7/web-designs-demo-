@@ -1,11 +1,4 @@
-/* ============================================
-   MURUGAN TIFFIN CENTRE - SCRIPT
-   Interactive Effects & Animations
-   ============================================ */
 
-// ============================================
-// PAGE LOADER ANIMATION
-// ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
     const pageLoader = document.getElementById('pageLoader');
@@ -13,37 +6,28 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
     
-    // Simulate a minimum loading time for dramatic effect (2.5 seconds)
     const minLoadingTime = 2500;
     const startTime = Date.now();
     
-    // Wait for resources to load
     window.addEventListener('load', () => {
         const elapsedTime = Date.now() - startTime;
         const remainingTime = Math.max(0, minLoadingTime - elapsedTime);
         
         setTimeout(() => {
-            // Add hidden class to trigger fade-out animation
             pageLoader.classList.add('hidden');
             
-            // Remove from DOM after animation completes
             setTimeout(() => {
                 pageLoader.remove();
             }, 800);
         }, remainingTime);
     });
     
-    // Fallback: hide loader if it takes too long (5 seconds max)
     setTimeout(() => {
         if (pageLoader && !pageLoader.classList.contains('hidden')) {
             pageLoader.classList.add('hidden');
         }
     }, 5000);
 });
-
-// ============================================
-// IMAGE LOADING HANDLER
-// ============================================
 
 const fallbackImageSources = {
     idli: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNW9LUIQCCAAT1ei-gg0zZzOSuJBKERy8F5V-8cd8NOxtfsv_ZisyYUn7JPXywSrM8BpyNgmpvXnojmC8yJn9-vqbhGwbiaQrKtjBTkuvwWw&s=10',
@@ -85,43 +69,35 @@ function resolveFallbackSource(img) {
 }
 
 function setupImageLoading() {
-    // Get all images to load
     const allImages = document.querySelectorAll('img[src]');
     
     allImages.forEach(img => {
-        // Skip if image is already loaded
         if (img.complete && img.naturalHeight !== 0) {
             img.classList.add('loaded');
             return;
         }
         
-        // Improve cross-origin loading reliability for third-party images.
         img.referrerPolicy = 'no-referrer';
         img.decoding = 'async';
 
-        // Add loading class to parent for shimmer effect
         const container = getImageContainer(img);
         if (container) {
             container.classList.add('loading');
         }
         
-        // Handle successful image load
         img.addEventListener('load', () => {
             img.classList.add('loaded');
             img.classList.remove('failed');
             
-            // Remove loading shimmer
             const loadedContainer = getImageContainer(img);
             if (loadedContainer) {
                 loadedContainer.classList.remove('loading');
             }
         });
         
-        // Handle image load errors with fallback
         img.addEventListener('error', () => {
             console.warn('Image failed to load:', img.src);
 
-            // First failure: try a secondary real photo source.
             if (img.dataset.fallbackTried !== 'true') {
                 img.dataset.fallbackTried = 'true';
                 img.src = resolveFallbackSource(img);
@@ -135,7 +111,6 @@ function setupImageLoading() {
             if (failedContainer) {
                 failedContainer.classList.remove('loading');
 
-                // Add a visual label when both remote sources fail.
                 if (!failedContainer.querySelector('.image-placeholder')) {
                     const placeholder = document.createElement('div');
                     placeholder.className = 'image-placeholder';
@@ -147,22 +122,16 @@ function setupImageLoading() {
     });
 }
 
-// Setup image loading when DOM is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', setupImageLoading);
 } else {
     setupImageLoading();
 }
 
-// ============================================
-// NAVIGATION - Sticky & Mobile Toggle
-// ============================================
-
 const navbar = document.querySelector('.navbar');
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 
-// Sticky navigation on scroll
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
         navbar.classList.add('scrolled');
@@ -171,23 +140,17 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Mobile menu toggle
 if (menuToggle) {
     menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
     });
 }
 
-// Close mobile menu when link is clicked
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
         navLinks.classList.remove('active');
     });
 });
-
-// ============================================
-// SMOOTH SCROLL for anchor links
-// ============================================
 
 document.querySelectorAll('[data-scroll]').forEach(link => {
     link.addEventListener('click', (e) => {
@@ -204,10 +167,6 @@ document.querySelectorAll('[data-scroll]').forEach(link => {
     });
 });
 
-// ============================================
-// ACCORDION MENU - Expand/Collapse
-// ============================================
-
 const accordionTriggers = document.querySelectorAll('.accordion-trigger');
 
 accordionTriggers.forEach(trigger => {
@@ -215,7 +174,6 @@ accordionTriggers.forEach(trigger => {
         const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
         const panel = document.getElementById(trigger.getAttribute('aria-controls'));
         
-        // Close all other accordion items
         accordionTriggers.forEach(otherTrigger => {
             if (otherTrigger !== trigger) {
                 otherTrigger.setAttribute('aria-expanded', 'false');
@@ -224,15 +182,10 @@ accordionTriggers.forEach(trigger => {
             }
         });
         
-        // Toggle current accordion
         trigger.setAttribute('aria-expanded', !isExpanded);
         panel.hidden = isExpanded;
     });
 });
-
-// ============================================
-// SCROLL REVEAL ANIMATION
-// ============================================
 
 const observerOptions = {
     threshold: 0.1,
@@ -248,12 +201,10 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all sections for reveal animation
 document.querySelectorAll('section').forEach(section => {
     observer.observe(section);
 });
 
-// Observe cards for staggered animation
 const observeCards = () => {
     const cards = document.querySelectorAll('.dish-card, .reason-card, .testimonial-card, .stat-box');
     
@@ -278,19 +229,13 @@ const observeCards = () => {
 
 observeCards();
 
-// ============================================
-// ENHANCED CARD HOVER EFFECTS
-// ============================================
-
 const addEnhancedCardEffects = () => {
     const reasonCards = document.querySelectorAll('.reason-card');
     
     reasonCards.forEach((card, index) => {
         card.addEventListener('mouseenter', function() {
-            // Add slight wiggle on hover
             this.style.animation = 'cardWiggle 0.6s ease-in-out';
             
-            // Interact with siblings
             reasonCards.forEach((sibling, siblingIndex) => {
                 if (siblingIndex !== index) {
                     sibling.style.opacity = '0.7';
@@ -311,10 +256,6 @@ const addEnhancedCardEffects = () => {
 
 addEnhancedCardEffects();
 
-// ============================================
-// BUTTON RIPPLE EFFECT
-// ============================================
-
 const addRippleEffect = () => {
     const buttons = document.querySelectorAll('.btn');
     
@@ -324,7 +265,6 @@ const addRippleEffect = () => {
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
             
-            // Create ripple element
             const ripple = document.createElement('span');
             ripple.style.position = 'absolute';
             ripple.style.left = x + 'px';
@@ -340,13 +280,11 @@ const addRippleEffect = () => {
             button.style.overflow = 'hidden';
             button.appendChild(ripple);
             
-            // Remove ripple after animation
             setTimeout(() => ripple.remove(), 600);
         });
     });
 };
 
-// Add ripple animation keyframes
 const style = document.createElement('style');
 style.textContent = `
     @keyframes rippleAnimation {
@@ -361,24 +299,15 @@ document.head.appendChild(style);
 
 addRippleEffect();
 
-// ============================================
-// HERO TEXT FADE-IN ENTRANCE
-// ============================================
-
 const heroTitle = document.querySelector('.hero-title');
 const heroSubtitle = document.querySelector('.hero-subtitle');
 
 if (heroTitle && heroSubtitle) {
-    // Animate on page load
     window.addEventListener('load', () => {
         heroTitle.style.animation = 'fadeInUp 0.8s ease-out 0.2s both';
         heroSubtitle.style.animation = 'fadeInUp 0.8s ease-out 0.4s both';
     });
 }
-
-// ============================================
-// STATS COUNTER ANIMATION
-// ============================================
 
 const animateCounters = () => {
     const statNumbers = document.querySelectorAll('.stat-number');
@@ -389,8 +318,7 @@ const animateCounters = () => {
                 const element = entry.target;
                 const text = element.innerText;
                 
-                // Skip animation for non-numeric values
-                if (text === '∞' || !text.match(/\d/)) {
+                if (text === 'âˆž' || !text.match(/\d/)) {
                     return;
                 }
                 
@@ -403,10 +331,6 @@ const animateCounters = () => {
 };
 
 animateCounters();
-
-// ============================================
-// PARALLAX EFFECT on scroll
-// ============================================
 
 const addParallaxEffect = () => {
     const heroTexture = document.querySelector('.hero-texture');
@@ -421,11 +345,6 @@ const addParallaxEffect = () => {
 
 addParallaxEffect();
 
-// ============================================
-// KEYBOARD NAVIGATION & ACCESSIBILITY
-// ============================================
-
-// Ensure all interactive elements are keyboard accessible
 document.querySelectorAll('[role="button"]').forEach(element => {
     element.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
@@ -435,11 +354,6 @@ document.querySelectorAll('[role="button"]').forEach(element => {
     });
 });
 
-// ============================================
-// PERFORMANCE OPTIMIZATION
-// ============================================
-
-// Lazy loading for images (if added in future)
 if ('IntersectionObserver' in window) {
     const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -454,12 +368,7 @@ if ('IntersectionObserver' in window) {
     document.querySelectorAll('img[data-src]').forEach(img => imageObserver.observe(img));
 }
 
-// ============================================
-// DRAMATIC PAGE LOAD ANIMATION
-// ============================================
-
 window.addEventListener('load', () => {
-    // Staggered reveal of major sections
     const sections = document.querySelectorAll('section');
     const header = document.querySelector('.hero');
     
@@ -474,21 +383,15 @@ window.addEventListener('load', () => {
         }, 300 + (index * 150));
     });
     
-    console.log('✨ Murugan Tiffin Centre - Design Enhanced');
+    console.log('âœ¨ Murugan Tiffin Centre - Design Enhanced');
 });
 
-// Set initial styles for sections
 document.querySelectorAll('section').forEach(section => {
     section.style.opacity = '0';
     section.style.transform = 'translateY(30px)';
     section.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
 });
 
-// ============================================
-// UTILITY FUNCTIONS
-// ============================================
-
-// Debounce function for scroll events
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -501,7 +404,6 @@ function debounce(func, wait) {
     };
 }
 
-// Throttle function for optimization
 function throttle(func, limit) {
     let inThrottle;
     return function(...args) {
@@ -513,17 +415,9 @@ function throttle(func, limit) {
     };
 }
 
-// ============================================
-// MOBILE DETECTION & OPTIMIZATION
-// ============================================
-
 const isMobile = () => {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 };
-
-// ============================================
-// CUSTOM ROUND CURSOR
-// ============================================
 
 const setupCustomCursor = () => {
     const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
@@ -579,10 +473,6 @@ const setupCustomCursor = () => {
 
     requestAnimationFrame(updateCursor);
 };
-
-// ============================================
-// EXTRA INTERACTION LAYER
-// ============================================
 
 const setupInteractiveMotion = () => {
     if (isMobile() || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -666,29 +556,19 @@ const setupHeroShowcaseMotion = () => {
     });
 };
 
-// Disable heavy animations on mobile devices
 if (isMobile()) {
     document.documentElement.style.setProperty('--transition-slow', '200ms ease-out');
-    console.log('✓ Mobile optimizations applied');
+    console.log('âœ“ Mobile optimizations applied');
 }
 
 setupCustomCursor();
 setupInteractiveMotion();
 setupHeroShowcaseMotion();
 
-// ============================================
-// PRELOAD CRITICAL RESOURCES
-// ============================================
-
-// Preconnect to Google Fonts
 const link = document.createElement('link');
 link.rel = 'preconnect';
 link.href = 'https://fonts.googleapis.com';
 document.head.appendChild(link);
-
-// ============================================
-// IMAGE LAZY LOADING & OPTIMIZATION
-// ============================================
 
 const loadImages = () => {
     const images = document.querySelectorAll('img[loading="lazy"]');
@@ -698,7 +578,6 @@ const loadImages = () => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const img = entry.target;
-                    // Image is already being loaded due to lazy attribute
                     img.addEventListener('load', () => {
                         img.style.opacity = '1';
                     });
@@ -716,11 +595,11 @@ const loadImages = () => {
 
 loadImages();
 
-// ============================================
-// IMAGE PARALLAX SCROLL EFFECT
-// ============================================
-
 const addImageParallax = () => {
+    if (isMobile() || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+    }
+
     const heroBg = document.querySelector('.hero-bg');
     
     if (heroBg) {
@@ -734,10 +613,6 @@ const addImageParallax = () => {
 
 addImageParallax();
 
-// ============================================
-// DISH CARD IMAGE ZOOM ON HOVER
-// ============================================
-
 const addDishImageEffects = () => {
     const dishImages = document.querySelectorAll('.dish-image img');
     
@@ -750,10 +625,6 @@ const addDishImageEffects = () => {
 };
 
 addDishImageEffects();
-
-// ============================================
-// ABOUT SECTION IMAGE ANIMATION
-// ============================================
 
 const addAboutImageEffect = () => {
     const aboutImage = document.querySelector('.about-image img');
@@ -777,10 +648,6 @@ const addAboutImageEffect = () => {
 };
 
 addAboutImageEffect();
-
-// ============================================
-// INTERACTIVE MENU ITEMS
-// ============================================
 
 const addMenuInteraction = () => {
     const menuItems = document.querySelectorAll('.menu-item');
@@ -807,10 +674,6 @@ const addMenuInteraction = () => {
 
 addMenuInteraction();
 
-// ============================================
-// STAT BOX COUNTER ANIMATION
-// ============================================
-
 const animateStatBoxes = () => {
     const statBoxes = document.querySelectorAll('.stat-box');
     
@@ -831,10 +694,6 @@ const animateStatBoxes = () => {
 };
 
 animateStatBoxes();
-
-// ============================================
-// SMOOTH SCROLL WITH OFFSET FOR FIXED NAV
-// ============================================
 
 const smoothScrollWithOffset = () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -857,39 +716,23 @@ const smoothScrollWithOffset = () => {
 
 smoothScrollWithOffset();
 
-// ============================================
-// SMOOTH COLOR TRANSITIONS on theme change
-// ============================================
-
-// Support for dark mode preference
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').media !== 'not all') {
-    console.log('✓ Dark mode preference detected and applied');
+    console.log('âœ“ Dark mode preference detected and applied');
 }
 
-// ============================================
-// ANALYTICS & USER TRACKING (Optional)
-// ============================================
-
-// Track scroll depth
 let maxScroll = 0;
 window.addEventListener('scroll', throttle(() => {
     const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
     if (scrollPercent > maxScroll) {
         maxScroll = scrollPercent;
-        // Could send analytics data here
     }
 }, 1000));
 
-// ============================================
-// ERROR HANDLING
-// ============================================
-
 window.addEventListener('error', (event) => {
     console.error('Page error:', event.error);
-    // Could send error tracking to monitoring service
 });
 
-// Handle unhandled promise rejections
 window.addEventListener('unhandledrejection', (event) => {
     console.error('Unhandled promise rejection:', event.reason);
 });
+
