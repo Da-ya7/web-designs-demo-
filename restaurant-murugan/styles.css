@@ -1,22 +1,18 @@
-/* ============================================
-   MURUGAN TIFFIN CENTRE - STYLES
-   Warm Luxury Aesthetic
-   ============================================ */
 
-/* CSS Variables - Design System */
+
 :root {
-    --color-bg: #1a0f0a;              /* Deep brown background */
-    --color-accent: #e8a020;           /* Turmeric gold accent */
-    --color-accent-bright: #f5a623;    /* Bright gold for sharp accents */
-    --color-text: #fdf6ec;             /* Warm cream text */
-    --color-text-muted: #d4c5ba;       /* Muted warm text */
-    --color-card: #2d1c14;             /* Slightly lighter brown for cards */
-    --color-border: #4a3428;           /* Border color */
-    --color-hover: #f5a623;            /* Brighter gold on hover */
-    --color-secondary: #c85a1b;        /* Burnt orange accent */
+    --color-bg: #1a0f0a;              
+    --color-accent: #e8a020;           
+    --color-accent-bright: #f5a623;    
+    --color-text: #fdf6ec;             
+    --color-text-muted: #d4c5ba;       
+    --color-card: #2d1c14;             
+    --color-border: #4a3428;           
+    --color-hover: #f5a623;            
+    --color-secondary: #c85a1b;        
     
-    /* Typography */
-    --ff-display: 'Cormorant Garamond', serif;  /* Bold luxury serif */
+    
+    --ff-display: 'Cormorant Garamond', serif;  
     --ff-heading: 'Literata', serif;
     --ff-body: 'Plus Jakarta Sans', sans-serif;
     --fw-regular: 400;
@@ -31,7 +27,7 @@
     --fs-3xl: clamp(2.8rem, 2rem + 2.2vw, 4rem);
     --fs-display: clamp(3.2rem, 2.2rem + 3.4vw, 5.2rem);
     
-    /* Spacing */
+    
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 1.5rem;
@@ -40,21 +36,17 @@
     --spacing-2xl: 4rem;
     --spacing-3xl: 5rem;
     
-    /* Transitions & Animation */
+    
     --transition-fast: 200ms ease-out;
     --transition-base: 300ms ease-out;
     --transition-slow: 500ms ease-out;
 
-    /* Micro Typography */
+    
     --tracking-tight: 0.01em;
     --tracking-base: 0.02em;
     --tracking-wide: 0.08em;
     --copy-measure: 66ch;
 }
-
-/* ============================================
-   RESET & BASE STYLES
-   ============================================ */
 
 * {
     margin: 0;
@@ -155,7 +147,6 @@ body.cursor-enabled.cursor-hover .cursor-dot {
     }
 }
 
-/* Typography */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--ff-heading);
     font-weight: var(--fw-semi);
@@ -181,10 +172,6 @@ a {
 a:hover {
     color: var(--color-hover);
 }
-
-/* ============================================
-   NAVIGATION
-   ============================================ */
 
 .navbar {
     position: fixed;
@@ -284,7 +271,6 @@ a:hover {
     border-radius: 2px;
 }
 
-/* Mobile Navigation */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -312,10 +298,6 @@ a:hover {
         padding: var(--spacing-md) var(--spacing-lg);
     }
 }
-
-/* ============================================
-   HERO SECTION
-   ============================================ */
 
 .hero {
     position: relative;
@@ -592,10 +574,6 @@ a:hover {
     }
 }
 
-/* ============================================
-   BUTTONS
-   ============================================ */
-
 .btn {
     padding: var(--spacing-md) var(--spacing-2xl);
     font-size: var(--fs-base);
@@ -673,10 +651,6 @@ a:hover {
     transform: scaleX(1);
 }
 
-/* ============================================
-   SECTIONS
-   ============================================ */
-
 section {
     padding: var(--spacing-3xl) var(--spacing-lg);
     max-width: 1400px;
@@ -698,7 +672,7 @@ section {
 }
 
 .section-title::before {
-    content: '◆';
+    content: 'â—†';
     display: block;
     font-size: 1.5rem;
     margin-bottom: var(--spacing-md);
@@ -730,10 +704,6 @@ section {
     margin-right: auto;
 }
 
-/* ============================================
-   SPECIALITIES SECTION
-   ============================================ */
-
 .specialities {
     background-color: rgba(45, 28, 20, 0.3);
     border-top: 1px solid rgba(232, 160, 32, 0.1);
@@ -742,7 +712,6 @@ section {
     overflow: hidden;
 }
 
-/* Decorative Tamil temple-inspired pattern */
 .specialities::before {
     content: '';
     position: absolute;
@@ -812,7 +781,6 @@ section {
     height: 100%;
 }
 
-/* Decorative top border pattern */
 .dish-card::after {
     content: '';
     position: absolute;
@@ -976,10 +944,6 @@ section {
     margin: 0;
 }
 
-/* ============================================
-   ABOUT SECTION
-   ============================================ */
-
 .about {
     background-color: rgba(45, 28, 20, 0.2);
 }
@@ -1106,7 +1070,6 @@ section {
     overflow: hidden;
 }
 
-/* Decorative corner accent */
 .stat-box::before {
     content: '';
     position: absolute;
@@ -1167,10 +1130,6 @@ section {
         order: -1;
     }
 }
-
-/* ============================================
-   MENU SECTION
-   ============================================ */
 
 .menu {
     background-color: rgba(45, 28, 20, 0.3);
@@ -1411,10 +1370,6 @@ section {
     opacity: 0.9;
 }
 
-/* ============================================
-   WHY US SECTION
-   ============================================ */
-
 .why-us {
     background-color: rgba(45, 28, 20, 0.2);
 }
@@ -1518,10 +1473,6 @@ section {
     line-height: 1.68;
 }
 
-/* ============================================
-   TIMINGS & DELIVERY SECTION
-   ============================================ */
-
 .timings {
     background-color: rgba(45, 28, 20, 0.3);
     border-top: 1px solid rgba(232, 160, 32, 0.1);
@@ -1620,10 +1571,6 @@ section {
     margin: 0;
 }
 
-/* ============================================
-   TESTIMONIALS SECTION
-   ============================================ */
-
 .testimonials {
     background-color: rgba(45, 28, 20, 0.2);
 }
@@ -1706,12 +1653,12 @@ section {
 }
 
 .testimonial-card blockquote::before {
-    content: '“';
+    content: 'â€œ';
     margin-right: 0.15em;
 }
 
 .testimonial-card blockquote::after {
-    content: '”';
+    content: 'â€';
     margin-left: 0.1em;
 }
 
@@ -1724,10 +1671,6 @@ section {
     font-family: var(--ff-body);
     opacity: 0.96;
 }
-
-/* ============================================
-   LOCATION SECTION
-   ============================================ */
 
 .location {
     background-color: rgba(45, 28, 20, 0.3);
@@ -1790,10 +1733,6 @@ section {
     }
 }
 
-/* ============================================
-   FOOTER
-   ============================================ */
-
 .footer {
     background-color: rgba(26, 15, 10, 0.6);
     border-top: 1px solid rgba(232, 160, 32, 0.1);
@@ -1834,10 +1773,6 @@ section {
     margin: 0;
 }
 
-/* ============================================
-   ANIMATIONS
-   ============================================ */
-
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -1860,10 +1795,6 @@ section {
         max-height: 1000px;
     }
 }
-
-/* ============================================
-   ANIMATIONS
-   ============================================ */
 
 @keyframes fadeInUp {
     from {
@@ -1932,10 +1863,6 @@ section {
 .reveal {
     animation: scrollReveal 0.6s ease-out;
 }
-
-/* ============================================
-   PAGE LOADER ANIMATION
-   ============================================ */
 
 .page-loader {
     position: fixed;
@@ -2027,10 +1954,6 @@ section {
     }
 }
 
-/* ============================================
-   RESPONSIVE DESIGN
-   ============================================ */
-
 @media (max-width: 1024px) {
     :root {
         --fs-3xl: 2.8rem;
@@ -2071,6 +1994,84 @@ section {
         align-items: center;
     }
 
+    .hero {
+        min-height: 100svh;
+        height: auto;
+        padding-top: 88px;
+        padding-bottom: 28px;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 1.4rem;
+        padding-inline: var(--spacing-md);
+    }
+
+    .hero-copy {
+        text-align: center;
+    }
+
+    .hero-kicker {
+        letter-spacing: 0.14em;
+        font-size: 0.7rem;
+        margin-bottom: 0.72rem;
+    }
+
+    .hero-showcase {
+        width: min(92vw, 430px);
+        height: 300px;
+        margin: 0 auto;
+    }
+
+    .hero-card-main {
+        left: 14%;
+        top: 8%;
+        width: 190px;
+        height: 240px;
+    }
+
+    .hero-card-top {
+        width: 145px;
+        height: 145px;
+        right: 4%;
+    }
+
+    .hero-card-bottom {
+        width: 124px;
+        height: 130px;
+        right: 14%;
+    }
+
+    .hero-badge {
+        font-size: 0.62rem;
+        letter-spacing: 0.1em;
+    }
+
+    .accordion-trigger {
+        min-height: 64px;
+    }
+
+    .menu-item {
+        grid-template-columns: minmax(0, 1fr) auto;
+        padding: 0.85rem 0.95rem;
+    }
+
+    .testimonial-card {
+        padding: 1.15rem;
+    }
+
+    .testimonial-card blockquote {
+        font-size: 0.96rem;
+        line-height: 1.78;
+    }
+
+    .btn,
+    .accordion-trigger,
+    .nav-links a,
+    .menu-toggle {
+        touch-action: manipulation;
+    }
+
     .btn {
         width: 100%;
     }
@@ -2102,8 +2103,10 @@ section {
     }
 
     .navbar-container {
-        flex-direction: column;
+        flex-direction: row;
         gap: var(--spacing-sm);
+        min-height: 64px;
+        align-items: center;
     }
 
     .logo h1 {
@@ -2116,6 +2119,59 @@ section {
 
     .hero-subtitle {
         font-size: var(--fs-base);
+    }
+
+    .hero-showcase {
+        height: 260px;
+    }
+
+    .hero-card-main {
+        width: 156px;
+        height: 202px;
+        left: 11%;
+    }
+
+    .hero-card-top {
+        width: 120px;
+        height: 120px;
+        right: 2%;
+    }
+
+    .hero-card-bottom {
+        width: 104px;
+        height: 108px;
+        right: 12%;
+    }
+
+    .hero-badge-left,
+    .hero-badge-right {
+        display: none;
+    }
+
+    .accordion-media {
+        width: 52px;
+        height: 42px;
+    }
+
+    .accordion-title {
+        font-size: 1rem;
+    }
+
+    .accordion-subtitle {
+        font-size: 0.74rem;
+        line-height: 1.42;
+    }
+
+    .menu-name {
+        font-size: 0.94rem;
+    }
+
+    .menu-price {
+        font-size: 1.1rem;
+    }
+
+    .stars {
+        letter-spacing: 0.22em;
     }
 
     .timings-table {
@@ -2147,17 +2203,11 @@ section {
     }
 }
 
-/* ============================================
-   ACCESSIBILITY
-   ============================================ */
-
-/* Focus visible for keyboard navigation */
 *:focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
 }
 
-/* Skip to main content link */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -2170,7 +2220,6 @@ section {
     border-width: 0;
 }
 
-/* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -2182,7 +2231,6 @@ section {
     }
 }
 
-/* High contrast mode */
 @media (prefers-contrast: more) {
     .btn-primary {
         border-width: 3px;
@@ -2194,3 +2242,4 @@ section {
         border-width: 2px;
     }
 }
+
