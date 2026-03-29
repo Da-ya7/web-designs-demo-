@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IronEdge Fitness - Chennai's Most Serious Gym</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true">
+        <span id="scrollProgressBar"></span>
+    </div>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">IRONEDGE</div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#trainers">Trainers</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#pricing">Membership</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="hero">
+        <div class="hero-grid-lines" aria-hidden="true"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-mark hero-stagger" style="--hero-delay: 60ms;" aria-hidden="true">IRONEDGE</div>
+            <p class="hero-kicker hero-stagger" style="--hero-delay: 180ms;">IronEdge Fitness | Chennai</p>
+            <h1 class="hero-stagger" style="--hero-delay: 300ms;">BUILT DIFFERENT</h1>
+            <p class="hero-stagger" style="--hero-delay: 430ms;">Chennai's most serious gym.</p>
+            <div class="hero-actions hero-stagger" style="--hero-delay: 560ms;">
+                <a href="#pricing" class="cta-button">START TODAY</a>
+                <a href="#programs" class="cta-button ghost">VIEW PROGRAMS</a>
+            </div>
+        </div>
+        <div class="hero-scroll-note hero-stagger" style="--hero-delay: 760ms;">Scroll To Enter</div>
+        <div class="hero-stripe"></div>
+    </section>
+
+    <section id="stats">
+        <div class="stats-container">
+            <div class="stat-item reveal-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Members</div>
+            </div>
+            <div class="stat-item reveal-item">
+                <div class="stat-number">12</div>
+                <div class="stat-label">Expert Trainers</div>
+            </div>
+            <div class="stat-item reveal-item">
+                <div class="stat-number">4.9★</div>
+                <div class="stat-label">Rating</div>
+            </div>
+            <div class="stat-item reveal-item">
+                <div class="stat-number">2019</div>
+                <div class="stat-label">Est.</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ticker" aria-label="Training philosophy">
+        <div class="ticker-track">
+            <span>NO EXCUSES</span>
+            <span>DISCIPLINE OVER MOTIVATION</span>
+            <span>ENGINEERED FOR CHENNAI ATHLETES</span>
+            <span>NO EXCUSES</span>
+            <span>DISCIPLINE OVER MOTIVATION</span>
+            <span>ENGINEERED FOR CHENNAI ATHLETES</span>
+        </div>
+    </section>
+
+    <section id="cred" aria-label="Brand credibility">
+        <div class="container cred-row reveal-item">
+            <p class="cred-label">Trusted Training Culture</p>
+            <div class="cred-logos">
+                <span>Strength Protocol</span>
+                <span>Combat Conditioning</span>
+                <span>Evidence-Based Coaching</span>
+                <span>Elite Recovery System</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="programs">
+        <div class="container">
+            <div class="section-head reveal-item">
+                <span class="section-index">01</span>
+                <h2>Programs</h2>
+            </div>
+            <p class="section-subtitle reveal-item">Precision programming. Zero fluff. Built for measurable outcomes.</p>
+            <div class="programs-grid">
+                <div class="program-card reveal-item">
+                    <img src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Strength Training" class="card-image" loading="lazy">
+                    <h3>Strength Training</h3>
+                    <p>Build raw power with compound lifts and progressive overload.</p>
+                    <div class="price">Starting from ₹1,499/mo</div>
+                </div>
+                <div class="program-card reveal-item">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="HIIT & Cardio" class="card-image" loading="lazy">
+                    <h3>HIIT & Cardio</h3>
+                    <p>High-intensity interval training to torch fat and boost endurance.</p>
+                    <div class="price">Starting from ₹1,499/mo</div>
+                </div>
+                <div class="program-card reveal-item">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Personal Training" class="card-image" loading="lazy">
+                    <h3>Personal Training</h3>
+                    <p>One-on-one coaching tailored to your goals and fitness level.</p>
+                    <div class="price">Starting from ₹1,499/mo</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <div class="container">
+            <div class="section-head reveal-item">
+                <span class="section-index">02</span>
+                <h2>Gym Gallery</h2>
+            </div>
+            <p class="section-subtitle">A few images inspired by trending gym visuals online.</p>
+            <div class="gallery-grid">
+                <img class="gallery-image reveal-item" src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80" alt="Gym free weights area" loading="lazy">
+                <img class="gallery-image reveal-item" src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80" alt="Athlete lifting barbell" loading="lazy">
+                <img class="gallery-image reveal-item" src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80" alt="Modern gym interior" loading="lazy">
+                <img class="gallery-image reveal-item" src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80" alt="Functional training session" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <section id="trainers">
+        <div class="container">
+            <div class="section-head reveal-item">
+                <span class="section-index">03</span>
+                <h2>Expert Trainers</h2>
+            </div>
+            <p class="section-subtitle reveal-item">Coaches who audit your form, track your numbers, and push accountability.</p>
+            <div class="trainers-grid">
+                <div class="trainer-card reveal-item">
+                    <div class="trainer-avatar">
+                        <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Rajesh Kumar" loading="lazy">
+                    </div>
+                    <h3>Rajesh Kumar</h3>
+                    <div class="speciality">Strength Specialist</div>
+                </div>
+                <div class="trainer-card reveal-item">
+                    <div class="trainer-avatar">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Priya Sharma" loading="lazy">
+                    </div>
+                    <h3>Priya Sharma</h3>
+                    <div class="speciality">HIIT Expert</div>
+                </div>
+                <div class="trainer-card reveal-item">
+                    <div class="trainer-avatar">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Amit Singh" loading="lazy">
+                    </div>
+                    <h3>Amit Singh</h3>
+                    <div class="speciality">Personal Trainer</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-head reveal-item">
+                <span class="section-index">04</span>
+                <h2>What Our Members Say</h2>
+            </div>
+            <p class="section-subtitle reveal-item">Real member stories from the Chennai fitness community.</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal-item">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Arjun" class="testimonial-image" loading="lazy">
+                    <p>"IronEdge transformed my life. The trainers are world-class and the atmosphere is unbeatable."</p>
+                    <div class="testimonial-author">- Arjun, Chennai</div>
+                </div>
+                <div class="testimonial-card reveal-item">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Meera" class="testimonial-image" loading="lazy">
+                    <p>"Best gym in Chennai. Clean facilities, great equipment, and results that speak for themselves."</p>
+                    <div class="testimonial-author">- Meera, Chennai</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing">
+        <div class="container">
+            <div class="section-head reveal-item">
+                <span class="section-index">05</span>
+                <h2>Membership Plans</h2>
+            </div>
+            <p class="section-subtitle reveal-item">Choose your commitment level and train like it matters.</p>
+            <div class="pricing-grid">
+                <div class="pricing-card reveal-item">
+                    <h3>Basic</h3>
+                    <div class="price">₹1,499<span>/mo</span></div>
+                    <ul>
+                        <li>Access to gym equipment</li>
+                        <li>Group classes</li>
+                        <li>Locker room access</li>
+                    </ul>
+                </div>
+                <div class="pricing-card featured reveal-item">
+                    <h3>Pro</h3>
+                    <div class="price">₹2,499<span>/mo</span></div>
+                    <ul>
+                        <li>Everything in Basic</li>
+                        <li>Personal training sessions</li>
+                        <li>Nutrition consultation</li>
+                        <li>Priority booking</li>
+                    </ul>
+                </div>
+                <div class="pricing-card reveal-item">
+                    <h3>Elite</h3>
+                    <div class="price">₹3,999<span>/mo</span></div>
+                    <ul>
+                        <li>Everything in Pro</li>
+                        <li>Unlimited PT sessions</li>
+                        <li>Recovery services</li>
+                        <li>VIP access</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="section-head reveal-item">
+                <span class="section-index">06</span>
+                <h2>Location & Contact</h2>
+            </div>
+            <p class="section-subtitle reveal-item">Train at our Chennai facility and start your transformation.</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Visit Us In Chennai</h3>
+                    <p>14, OMR Service Road, Chennai 600100</p>
+                    <p>Phone: 98400 XXXXX</p>
+                    <p>Email: hello@ironedgefitness.in</p>
+                    <a href="https://wa.me/919840012345" class="whatsapp-button">Contact on WhatsApp</a>
+                </div>
+                <div class="map-placeholder reveal-item">
+                    <iframe
+                        title="IronEdge Fitness Location"
+                        src="https://www.google.com/maps?q=OMR%20Service%20Road%20Chennai&output=embed"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="final-cta">
+        <div class="container final-cta-panel reveal-item">
+            <p class="final-cta-kicker">IRONEDGE CHENNAI</p>
+            <h2>READY TO TRAIN LIKE A PROFESSIONAL?</h2>
+            <p>Join the system. Build a stronger body, stronger mindset, and measurable progress week after week.</p>
+            <div class="final-cta-actions">
+                <a href="#pricing" class="cta-button">JOIN NOW</a>
+                <a href="https://wa.me/919840012345" class="cta-button ghost">TALK TO COACH</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 IronEdge Fitness. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
