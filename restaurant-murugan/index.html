@@ -1,12 +1,474 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Restaurant Murugan</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Murugan Tiffin Centre - Authentic South Indian Cuisine</title>
+    <meta name="description" content="Authentic South Indian Tiffin & Meals since 1998. Located in Pallikaranai, Chennai.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600;7..72,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Restaurant Murugan</h1>
-  <p>Coming soon. Replace this file with your real project.</p>
+    <!-- Page Load Animation -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <div class="loader-spinner">
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+            </div>
+            <p class="loader-text">Loading Murugan's...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="navbar-container">
+            <div class="logo">
+                <h1>Murugan</h1>
+                <p class="tagline">Tiffin Centre</p>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#specialities" data-scroll>Specialities</a></li>
+                <li><a href="#about" data-scroll>About</a></li>
+                <li><a href="#menu" data-scroll>Menu</a></li>
+                <li><a href="#why-us" data-scroll>Why Us</a></li>
+                <li><a href="#timings" data-scroll>Order</a></li>
+                <li><a href="#testimonials" data-scroll>Reviews</a></li>
+                <li><a href="#location" data-scroll>Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" role="region" aria-label="Hero Section">
+        <div class="hero-bg"></div>
+        <div class="hero-texture"></div>
+        <div class="hero-content">
+            <div class="hero-copy">
+                <p class="hero-kicker">Chennai Family Kitchen Since 1998</p>
+                <h2 class="hero-title">Taste of Tamil Nadu</h2>
+                <p class="hero-subtitle">Authentic South Indian tiffin with legacy recipes, hand-ground batter, and service that feels like home.</p>
+                <div class="hero-buttons">
+                    <a href="#menu" class="btn btn-primary" data-scroll>View Menu</a>
+                    <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Order on WhatsApp</a>
+                </div>
+            </div>
+            <div class="hero-showcase" aria-label="Signature dishes">
+                <figure class="hero-card hero-card-main" data-depth="0.08">
+                    <img src="https://www.awesomecuisine.com/wp-content/uploads/2009/06/Plain-Dosa.jpg" alt="Golden crisp dosa being served" loading="lazy">
+                    <figcaption>Signature Dosa</figcaption>
+                </figure>
+                <figure class="hero-card hero-card-top" data-depth="0.12">
+                    <img src="https://curlytales.com/wp-content/uploads/2025/10/filter-coffee-bengaluru-1.jpg" alt="Fresh South Indian filter coffee" loading="lazy">
+                    <figcaption>Filter Kaapi</figcaption>
+                </figure>
+                <figure class="hero-card hero-card-bottom" data-depth="0.15">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNW9LUIQCCAAT1ei-gg0zZzOSuJBKERy8F5V-8cd8NOxtfsv_ZisyYUn7JPXywSrM8BpyNgmpvXnojmC8yJn9-vqbhGwbiaQrKtjBTkuvwWw&s=10" alt="Soft idli with sambhar and chutney" loading="lazy">
+                    <figcaption>Morning Idli</figcaption>
+                </figure>
+                <div class="hero-badge hero-badge-left">Pure Veg</div>
+                <div class="hero-badge hero-badge-right">26 Years Legacy</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Specialities Section -->
+    <section id="specialities" class="specialities" role="region" aria-label="Specialities">
+        <h2 class="section-title">Our Specialities</h2>
+        <p class="section-subtitle">Handcrafted dishes made fresh every morning</p>
+        
+        <div class="dishes-grid">
+            <article class="dish-card">
+                <div class="dish-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNW9LUIQCCAAT1ei-gg0zZzOSuJBKERy8F5V-8cd8NOxtfsv_ZisyYUn7JPXywSrM8BpyNgmpvXnojmC8yJn9-vqbhGwbiaQrKtjBTkuvwWw&s=10" data-fallback="idli"
+                         alt="Soft Idli - Authentic South Indian steamed cakes" loading="lazy">
+                </div>
+                <div class="dish-content">
+                    <h3>Idli</h3>
+                    <p class="dish-description">மென்மையான இடலி - வெல்லத்துடன் சாம்பார்</p>
+                    <div class="dish-price">₹20</div>
+                </div>
+            </article>
+
+            <article class="dish-card">
+                <div class="dish-image">
+                    <img src="https://www.awesomecuisine.com/wp-content/uploads/2009/06/Plain-Dosa.jpg" data-fallback="dosa"
+                         alt="Crispy Dosa - Traditional South Indian crepe" loading="lazy">
+                </div>
+                <div class="dish-content">
+                    <h3>Dosa</h3>
+                    <p class="dish-description">வெண்ணெய் தோசை - இட்லி சாம்பார்</p>
+                    <div class="dish-price">₹40</div>
+                </div>
+            </article>
+
+            <article class="dish-card">
+                <div class="dish-image">
+                    <img src="https://spiceindiaonline.com/wp-content/uploads/2014/01/Ven-Pongal-3.jpg" data-fallback="pongal"
+                         alt="Pongal - Creamy rice and lentil dish" loading="lazy">
+                </div>
+                <div class="dish-content">
+                    <h3>Pongal</h3>
+                    <p class="dish-description">வெல்-(தை பொங்கல் - நெய் பொங்கல்)</p>
+                    <div class="dish-price">₹45</div>
+                </div>
+            </article>
+
+            <article class="dish-card">
+                <div class="dish-image">
+                    <img src="https://static.wixstatic.com/media/a94a23_aa674298181e422db3f4da9c8bfac4cc~mv2.jpg/v1/fill/w_568,h_320,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/a94a23_aa674298181e422db3f4da9c8bfac4cc~mv2.jpg" data-fallback="meals"
+                         alt="Complete Meals - Rice with curry and sambhar" loading="lazy">
+                </div>
+                <div class="dish-content">
+                    <h3>Complete Meals</h3>
+                    <p class="dish-description">சாம்பார் ரசம் - அஞ்சலி</p>
+                    <div class="dish-price">₹60</div>
+                </div>
+            </article>
+
+            <article class="dish-card">
+                <div class="dish-image">
+                    <img src="https://curlytales.com/wp-content/uploads/2025/10/filter-coffee-bengaluru-1.jpg" data-fallback="coffee"
+                         alt="Fresh Filter Coffee - South Indian style" loading="lazy">
+                </div>
+                <div class="dish-content">
+                    <h3>Filter Coffee</h3>
+                    <p class="dish-description">கஸ்தூரி - நாட்டுக் கொட்டை</p>
+                    <div class="dish-price">₹15</div>
+                </div>
+            </article>
+
+            <article class="dish-card">
+                <div class="dish-image">
+                    <img src="https://i0.wp.com/www.chitrasfoodbook.com/wp-content/uploads/2015/02/kerala-parotta.jpg?w=1200&ssl=1" data-fallback="parotta"
+                         alt="Flaky Parotta - Layered bread with butter" loading="lazy">
+                </div>
+                <div class="dish-content">
+                    <h3>Parotta</h3>
+                    <p class="dish-description">பரோட்டா - சைத்தியக்க குவாய்</p>
+                    <div class="dish-price">₹30</div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about" role="region" aria-label="About">
+        <div class="about-container">
+            <div class="about-image">
+                 <img src="https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?auto=compress&cs=tinysrgb&w=1200" data-fallback="kitchen"
+                     alt="Traditional South Indian restaurant kitchen" loading="lazy">
+            </div>
+            <div class="about-content">
+                <h2>Three Generations, One Kitchen</h2>
+                <p>
+                    Since 1998, Murugan Tiffin Centre has been serving authentic South Indian cuisine 
+                    with love and dedication. What started as a small family kitchen has grown into 
+                    a beloved institution across Chennai.
+                </p>
+                <p>
+                    We believe in honoring traditional recipes while maintaining the highest standards 
+                    of freshness and quality. Every dish is prepared with the finest ingredients and 
+                    served hot with care.
+                </p>
+                <p>
+                    Our family's commitment to excellence has made us a trusted name across Chennai. 
+                    Join us for an authentic South Indian experience.
+                </p>
+            </div>
+            <div class="about-stats">
+                <div class="stat-box">
+                    <span class="stat-number">26</span>
+                    <span class="stat-label">Years</span>
+                    <span class="stat-sublabel">Of Service</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Fresh</span>
+                    <span class="stat-sublabel">Ingredients</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">∞</span>
+                    <span class="stat-label">Family</span>
+                    <span class="stat-sublabel">Recipes</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Menu Section -->
+    <section id="menu" class="menu" role="region" aria-label="Full Menu">
+        <h2 class="section-title">Full Menu</h2>
+        <p class="section-subtitle">Everything fresh, everything authentic</p>
+
+        <div class="accordion-container">
+            <!-- Breakfast -->
+            <div class="accordion-item">
+                <button class="accordion-trigger" aria-expanded="false" aria-controls="breakfast-menu">
+                    <span class="accordion-media" aria-hidden="true">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNW9LUIQCCAAT1ei-gg0zZzOSuJBKERy8F5V-8cd8NOxtfsv_ZisyYUn7JPXywSrM8BpyNgmpvXnojmC8yJn9-vqbhGwbiaQrKtjBTkuvwWw&s=10" alt="" loading="lazy">
+                    </span>
+                    <span class="accordion-title-wrap">
+                        <span class="accordion-title">Breakfast Specials</span>
+                        <span class="accordion-subtitle">Idli • Dosa • Pongal served fresh by sunrise</span>
+                    </span>
+                    <span class="accordion-icon" aria-hidden="true">+</span>
+                </button>
+                <div id="breakfast-menu" class="accordion-panel" hidden>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="menu-name">Soft Idli (3 pcs)</div>
+                            <div class="menu-price">₹20</div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-name">Plain Dosa</div>
+                            <div class="menu-price">₹35</div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-name">Fluff Dosa</div>
+                            <div class="menu-price">₹45</div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-name">Masala Dosa</div>
+                            <div class="menu-price">₹50</div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-name">Pongal with Sambhar</div>
+                            <div class="menu-price">₹45</div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-name">Uttapam</div>
+                            <div class="menu-price">₹40</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lunch Meals -->
+            <div class="accordion-item">
+                <button class="accordion-trigger" aria-expanded="false" aria-controls="lunch-menu">
+                    <span class="accordion-media" aria-hidden="true">
+                        <img src="https://static.wixstatic.com/media/a94a23_aa674298181e422db3f4da9c8bfac4cc~mv2.jpg/v1/fill/w_568,h_320,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/a94a23_aa674298181e422db3f4da9c8bfac4cc~mv2.jpg" alt="" loading="lazy">
+                    </span>
+                    <span class="accordion-title-wrap">
+                        <span class="accordion-title">Lunch Meals & Combos</span>
+                        <span class="accordion-subtitle">Hearty veg meals, rice combos and house specials</span>
+                    </span>
+                    <span class="accordion-icon" aria-hidden="true">+</span>
+                </button>
+                <div id="lunch-menu" class="accordion-panel" hidden>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="menu-name">Sambhar Rice Combo</div>
+                            <div class="menu-price">₹65</div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-name">Rasam Rice Combo</div>
+                            <div class="menu-price">₹65</div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-name">Curd Rice Combo</div>
+                            <div class="menu-price">₹60</div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-name">Vegetable Biryani</div>
+                            <div class="menu-price">₹70</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beverages -->
+            <div class="accordion-item">
+                <button class="accordion-trigger" aria-expanded="false" aria-controls="beverages-menu">
+                    <span class="accordion-media" aria-hidden="true">
+                        <img src="https://curlytales.com/wp-content/uploads/2025/10/filter-coffee-bengaluru-1.jpg" alt="" loading="lazy">
+                    </span>
+                    <span class="accordion-title-wrap">
+                        <span class="accordion-title">Beverages & Extras</span>
+                        <span class="accordion-subtitle">Filter coffee, chai and coolers to finish right</span>
+                    </span>
+                    <span class="accordion-icon" aria-hidden="true">+</span>
+                </button>
+                <div id="beverages-menu" class="accordion-panel" hidden>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="menu-name">Filter Coffee (South Indian)</div>
+                            <div class="menu-price">₹15</div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-name">Masala Chai</div>
+                            <div class="menu-price">₹12</div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-name">Buttermilk</div>
+                            <div class="menu-price">₹20</div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-name">Fresh Orange Juice</div>
+                            <div class="menu-price">₹30</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="why-us" role="region" aria-label="Why Choose Us">
+        <h2 class="section-title">Why Choose Murugan?</h2>
+        <div class="reasons-grid">
+            <article class="reason-card">
+                <div class="reason-icon" aria-hidden="true">
+                    <img src="https://img.icons8.com/fluency/96/shield.png" alt="" loading="lazy">
+                </div>
+                <h3>No Preservatives</h3>
+                <p>Every item prepared fresh daily with zero artificial additives.</p>
+            </article>
+            <article class="reason-card">
+                <div class="reason-icon" aria-hidden="true">
+                    <img src="https://img.icons8.com/fluency/96/sun--v1.png" alt="" loading="lazy">
+                </div>
+                <h3>Made Fresh Daily</h3>
+                <p>Prepared before sunrise with traditional cooking methods.</p>
+            </article>
+            <article class="reason-card">
+                <div class="reason-icon" aria-hidden="true">
+                    <img src="https://img.icons8.com/fluency/96/sprout.png" alt="" loading="lazy">
+                </div>
+                <h3>100% Vegetarian</h3>
+                <p>Pure veg meals for everyone, every day, without compromise.</p>
+            </article>
+            <article class="reason-card">
+                <div class="reason-icon" aria-hidden="true">
+                    <img src="https://img.icons8.com/fluency/96/soap-dispenser.png" alt="" loading="lazy">
+                </div>
+                <h3>Hygiene Certified</h3>
+                <p>FSSAI certified kitchen with strict food safety standards.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Timings & Delivery Section -->
+    <section id="timings" class="timings" role="region" aria-label="Timings and Delivery">
+        <div class="timings-container">
+            <div class="timings-content">
+                <h2>Opening Hours</h2>
+                <table class="timings-table" role="table">
+                    <tbody>
+                        <tr>
+                            <td class="day-name">Monday - Saturday</td>
+                            <td class="day-hours">5:00 AM - 11:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td class="day-name">Sunday</td>
+                            <td class="day-hours">5:00 AM - 10:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td class="day-name">Holidays</td>
+                            <td class="day-hours">Check WhatsApp</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="delivery-info">
+                    <h3>We Deliver To:</h3>
+                    <p>Across Chennai - Velachery • Perungudi • ECR • Medavakkam</p>
+                </div>
+                <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Order on WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials" role="region" aria-label="Customer Reviews">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <div class="testimonials-grid">
+            <article class="testimonial-card">
+                <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <blockquote>
+                    "Murugan Tiffin Centre serves the most authentic idli and dosa I've ever tasted. 
+                    The quality never changes, day after day. Simply the best in Chennai!"
+                </blockquote>
+                <div class="testimonial-author">— Ramesh Kumar</div>
+            </article>
+
+            <article class="testimonial-card">
+                <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <blockquote>
+                    "Family run, fresh ingredients, reasonable prices, and service with a smile. 
+                    This is what a proper South Indian restaurant should be like."
+                </blockquote>
+                <div class="testimonial-author">— Priya Sharma</div>
+            </article>
+
+            <article class="testimonial-card">
+                <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <blockquote>
+                    "For 26 years they've been consistent with quality. Their filter coffee is 
+                    legendary, and the dosa tastes like home. A treasure of Chennai!"
+                </blockquote>
+                <div class="testimonial-author">— Anita Singh</div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="location" role="region" aria-label="Location and Contact">
+        <h2 class="section-title">Visit Us</h2>
+        <div class="location-container">
+            <div class="location-info">
+                <h3>Murugan Tiffin Centre</h3>
+                <div class="contact-item">
+                    <strong>Address:</strong>
+                    <p>East Coast Road (OMR)<br>
+                    Chennai 600100</p>
+                </div>
+                <div class="contact-item">
+                    <strong>Phone:</strong>
+                    <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+                </div>
+                <div class="contact-item">
+                    <strong>WhatsApp:</strong>
+                    <p><a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">+91 98765 43210 (Quick Orders)</a></p>
+                </div>
+            </div>
+            <div class="map-placeholder">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.6539688325034!2d80.21945607346192!3d12.893256713266456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525f5f5f5f5f5f%3A0x0!2sEast%20Coast%20Road%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1234567890" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Murugan Tiffin Centre</h3>
+                <p>Authentic South Indian Tiffin & Meals</p>
+            </div>
+            <div class="footer-links">
+                <p>&copy; 2024 Murugan Tiffin Centre. All rights reserved.</p>
+            </div>
+            <div class="footer-socials">
+                <p>Made in Chennai</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
 </html>
