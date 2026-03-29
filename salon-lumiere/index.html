@@ -1,12 +1,640 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Salon Lumiere</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMIÈRE | Editorial Beauty Studio</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <h1>Salon Lumiere</h1>
-  <p>Coming soon. Replace this file with your real project.</p>
+
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">Lumière</a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#services" onclick="closeMenu()">Services</a></li>
+        <li><a href="#pricing" onclick="closeMenu()">Pricing</a></li>
+        <li><a href="#artists" onclick="closeMenu()">Team</a></li>
+        <li><a href="#booking" onclick="closeMenu()">Book</a></li>
+      </ul>
+      <button class="nav-cta"
+        onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'}); closeMenu()">Book
+        Studio</button>
+    </div>
+    <div class="hamburger" id="ham" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <section id="hero">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-eyebrow reveal">Pallikaranai, Chennai</div>
+        <h1 class="hero-title reveal">Where Beauty<br>Meets <em>Craft.</em></h1>
+        <p class="hero-desc reveal">A premium beauty studio built for the women of Chennai. Expert stylists, luxury
+          treatments, and an experience that feels nothing like your average salon.</p>
+
+        <div class="hero-stats reveal" style="transition-delay: 0.15s;">
+          <div class="stat-item">
+            <div class="stat-num">800+</div>
+            <div class="stat-label">Happy Clients</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">4.9★</div>
+            <div class="stat-label">Google Rating</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">7+</div>
+            <div class="stat-label">Years in Chennai</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image-pane reveal">
+        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f10d5e42?q=80&w=2000&auto=format&fit=crop"
+          alt="High Fashion Hair and Makeup" data-parallax>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <div class="section-header reveal">
+      <h2>Our<br>Services</h2>
+      <div class="tag-uppercase text-accent">01 — What We Do</div>
+    </div>
+    <p class="section-intro reveal">Every service is performed by certified specialists with premium products. No
+      shortcuts, no rush.</p>
+
+    <div class="services-catalog">
+      <div class="service-item reveal">
+        <div class="service-duration">45 – 60 MIN</div>
+        <div class="service-header">
+          <h3 class="service-title">Hair Cut & Styling</h3>
+          <span class="service-price">FROM ₹299</span>
+        </div>
+        <p class="service-desc">Precision cuts tailored to your face shape and lifestyle. Includes wash, cut, blow-dry,
+          and finish.</p>
+      </div>
+
+      <div class="service-item reveal" style="transition-delay: 0.1s">
+        <div class="service-duration">90 – 180 MIN</div>
+        <div class="service-header">
+          <h3 class="service-title">Hair Colouring</h3>
+          <span class="service-price">FROM ₹1,200</span>
+        </div>
+        <p class="service-desc">Global colour, highlights, balayage, ombre — using Wella, L'Oréal Professional, and
+          Schwarzkopf.</p>
+      </div>
+
+      <div class="service-item reveal" style="transition-delay: 0.2s">
+        <div class="service-duration">3 – 4 HRS</div>
+        <div class="service-header">
+          <h3 class="service-title">Bridal Makeup</h3>
+          <span class="service-price">FROM ₹8,000</span>
+        </div>
+        <p class="service-desc">Full bridal look with airbrush foundation, HD makeup, and long-lasting finish. Includes
+          trial session.</p>
+      </div>
+
+      <div class="service-item reveal">
+        <div class="service-duration">60 – 90 MIN</div>
+        <div class="service-header">
+          <h3 class="service-title">Facial & Skin Care</h3>
+          <span class="service-price">FROM ₹599</span>
+        </div>
+        <p class="service-desc">Deep cleansing, gold facial, brightening, anti-ageing — customised to your skin type.
+        </p>
+      </div>
+
+      <div class="service-item reveal" style="transition-delay: 0.1s">
+        <div class="service-duration">45 – 75 MIN</div>
+        <div class="service-header">
+          <h3 class="service-title">Nail Art</h3>
+          <span class="service-price">FROM ₹399</span>
+        </div>
+        <p class="service-desc">Gel nails, acrylics, nail art designs, and manicure/pedicure using OPI and Essie
+          products.</p>
+      </div>
+
+      <div class="service-item reveal" style="transition-delay: 0.2s">
+        <div class="service-duration">3 – 4 HRS</div>
+        <div class="service-header">
+          <h3 class="service-title">Keratin Treatment</h3>
+          <span class="service-price">FROM ₹3,500</span>
+        </div>
+        <p class="service-desc">Frizz-free, smooth, shiny hair for 4–6 months. Safe keratin with no formaldehyde.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE SPACE -->
+  <section id="studio" class="section section-dark">
+    <div class="tag-uppercase text-accent reveal" style="margin-bottom: 2rem;">02 — The Space</div>
+    <p class="manifesto-text reveal">We designed Lumière to feel nothing like a typical salon. <em>Calm, clean,
+        beautiful</em> — a space where you can relax and trust that you're in expert hands.</p>
+    <div class="studio-pills reveal">
+      <div class="studio-pill">Fully AC Studio</div>
+      <div class="studio-pill">Sterilised Tools</div>
+      <div class="studio-pill">Certified Stylists</div>
+      <div class="studio-pill">Premium Products</div>
+      <div class="studio-pill">Women-Only</div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="section">
+    <div class="section-header reveal">
+      <h2>Transparent<br>Pricing</h2>
+      <div class="tag-uppercase text-accent">03 — Packages</div>
+    </div>
+
+    <div class="pricing-tabs reveal">
+      <div class="ptab active" onclick="switchTab('hair', this)">Hair Excellence</div>
+      <div class="ptab" onclick="switchTab('skin', this)">Skin & Makeup</div>
+      <div class="ptab" onclick="switchTab('combo', this)">Combo Packages</div>
+    </div>
+
+    <div class="ptab-content active" id="tab-hair">
+      <div class="price-row header reveal">
+        <div class="price-service-col"><span class="header-item">Service</span></div>
+        <div class="price-tiers">
+          <div class="price-tier"><span class="header-item">Basic</span></div>
+          <div class="price-tier"><span class="header-item">Premium</span></div>
+          <div class="price-tier"><span class="header-item text-accent">Luxury</span></div>
+        </div>
+      </div>
+      <div class="price-row reveal">
+        <div class="price-service-col">
+          <div class="price-service-name">Hair Cut</div>
+          <div class="price-service-detail">Includes wash & blow-dry</div>
+        </div>
+        <div class="price-tiers">
+          <div class="price-tier">
+            <div class="price-tier-val">₹299</div>
+          </div>
+          <div class="price-tier">
+            <div class="price-tier-val">₹499</div>
+          </div>
+          <div class="price-tier">
+            <div class="price-tier-val highlight">₹799</div>
+          </div>
+        </div>
+      </div>
+      <div class="price-row reveal">
+        <div class="price-service-col">
+          <div class="price-service-name">Global Colour</div>
+          <div class="price-service-detail">Root to tip transformation</div>
+        </div>
+        <div class="price-tiers">
+          <div class="price-tier">
+            <div class="price-tier-val">₹1,200</div>
+          </div>
+          <div class="price-tier">
+            <div class="price-tier-val">₹2,000</div>
+          </div>
+          <div class="price-tier">
+            <div class="price-tier-val highlight">₹3,500</div>
+          </div>
+        </div>
+      </div>
+      <div class="price-row reveal">
+        <div class="price-service-col">
+          <div class="price-service-name">Highlights</div>
+          <div class="price-service-detail">Custom dimension & placement</div>
+        </div>
+        <div class="price-tiers">
+          <div class="price-tier">
+            <div class="price-tier-val">₹1,800</div>
+          </div>
+          <div class="price-tier">
+            <div class="price-tier-val">₹2,800</div>
+          </div>
+          <div class="price-tier">
+            <div class="price-tier-val highlight">₹4,500</div>
+          </div>
+        </div>
+      </div>
+      <div class="price-row reveal">
+        <div class="price-service-col">
+          <div class="price-service-name">Keratin Treatment</div>
+          <div class="price-service-detail">Frizz elimination system</div>
+        </div>
+        <div class="price-tiers">
+          <div class="price-tier">
+            <div class="price-tier-val">₹3,500</div>
+          </div>
+          <div class="price-tier">
+            <div class="price-tier-val">₹5,000</div>
+          </div>
+          <div class="price-tier">
+            <div class="price-tier-val highlight">₹7,500</div>
+          </div>
+        </div>
+      </div>
+      <div class="price-row reveal">
+        <div class="price-service-col">
+          <div class="price-service-name">Smoothening</div>
+          <div class="price-service-detail">Permanent hair restructuring</div>
+        </div>
+        <div class="price-tiers">
+          <div class="price-tier">
+            <div class="price-tier-val">₹4,000</div>
+          </div>
+          <div class="price-tier">
+            <div class="price-tier-val">₹6,000</div>
+          </div>
+          <div class="price-tier">
+            <div class="price-tier-val highlight">₹9,000</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ptab-content" id="tab-skin">
+      <div class="price-row header reveal">
+        <div class="price-service-col"><span class="header-item">Service</span></div>
+        <div class="price-tiers">
+          <div class="price-tier"><span class="header-item">Basic</span></div>
+          <div class="price-tier"><span class="header-item">Premium</span></div>
+          <div class="price-tier"><span class="header-item text-accent">Luxury</span></div>
+        </div>
+      </div>
+      <div class="price-row reveal">
+        <div class="price-service-col">
+          <div class="price-service-name">Clean-up Facial</div>
+        </div>
+        <div class="price-tiers">
+          <div class="price-tier">
+            <div class="price-tier-val">₹599</div>
+          </div>
+          <div class="price-tier">
+            <div class="price-tier-val">₹999</div>
+          </div>
+          <div class="price-tier">
+            <div class="price-tier-val highlight">₹1,500</div>
+          </div>
+        </div>
+      </div>
+      <div class="price-row reveal">
+        <div class="price-service-col">
+          <div class="price-service-name">Gold Facial</div>
+        </div>
+        <div class="price-tiers">
+          <div class="price-tier">
+            <div class="price-tier-val">₹999</div>
+          </div>
+          <div class="price-tier">
+            <div class="price-tier-val">₹1,800</div>
+          </div>
+          <div class="price-tier">
+            <div class="price-tier-val highlight">₹2,800</div>
+          </div>
+        </div>
+      </div>
+      <div class="price-row reveal">
+        <div class="price-service-col">
+          <div class="price-service-name">Party Makeup</div>
+        </div>
+        <div class="price-tiers">
+          <div class="price-tier">
+            <div class="price-tier-val">₹1,500</div>
+          </div>
+          <div class="price-tier">
+            <div class="price-tier-val">₹2,500</div>
+          </div>
+          <div class="price-tier">
+            <div class="price-tier-val highlight">₹4,000</div>
+          </div>
+        </div>
+      </div>
+      <div class="price-row reveal">
+        <div class="price-service-col">
+          <div class="price-service-name">Bridal Makeup</div>
+        </div>
+        <div class="price-tiers">
+          <div class="price-tier">
+            <div class="price-tier-val">₹8,000</div>
+          </div>
+          <div class="price-tier">
+            <div class="price-tier-val">₹12,000</div>
+          </div>
+          <div class="price-tier">
+            <div class="price-tier-val highlight">₹18,000</div>
+          </div>
+        </div>
+      </div>
+      <div class="price-row reveal">
+        <div class="price-service-col">
+          <div class="price-service-name">Nail Art</div>
+        </div>
+        <div class="price-tiers">
+          <div class="price-tier">
+            <div class="price-tier-val">₹399</div>
+          </div>
+          <div class="price-tier">
+            <div class="price-tier-val">₹699</div>
+          </div>
+          <div class="price-tier">
+            <div class="price-tier-val highlight">₹1,200</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ptab-content" id="tab-combo">
+      <div class="price-row header reveal">
+        <div class="price-service-col"><span class="header-item">Package</span></div>
+        <div class="price-tiers">
+          <div class="price-tier"><span class="header-item">Worth</span></div>
+          <div class="price-tier"><span class="header-item text-accent">You Pay</span></div>
+        </div>
+      </div>
+      <div class="price-row reveal">
+        <div class="price-service-col">
+          <div class="price-service-name">Glow Day</div>
+          <div class="price-service-detail">Facial + Mani</div>
+        </div>
+        <div class="price-tiers">
+          <div class="price-tier">
+            <div class="price-tier-val" style="text-decoration: line-through; color: #888;">₹1,200</div>
+          </div>
+          <div class="price-tier">
+            <div class="price-tier-val highlight">₹899</div>
+          </div>
+        </div>
+      </div>
+      <div class="price-row reveal">
+        <div class="price-service-col">
+          <div class="price-service-name">Bride-to-Be</div>
+          <div class="price-service-detail">Trial + Bridal Makeup</div>
+        </div>
+        <div class="price-tiers">
+          <div class="price-tier">
+            <div class="price-tier-val" style="text-decoration: line-through; color: #888;">₹14,000</div>
+          </div>
+          <div class="price-tier">
+            <div class="price-tier-val highlight">₹10,999</div>
+          </div>
+        </div>
+      </div>
+      <div class="price-row reveal">
+        <div class="price-service-col">
+          <div class="price-service-name">Full Refresh</div>
+          <div class="price-service-detail">Cut + Colour + Facial</div>
+        </div>
+        <div class="price-tiers">
+          <div class="price-tier">
+            <div class="price-tier-val" style="text-decoration: line-through; color: #888;">₹3,500</div>
+          </div>
+          <div class="price-tier">
+            <div class="price-tier-val highlight">₹2,599</div>
+          </div>
+        </div>
+      </div>
+      <div class="price-row reveal">
+        <div class="price-service-col">
+          <div class="price-service-name">Pamper Sunday</div>
+          <div class="price-service-detail">Facial + Mani + Pedi</div>
+        </div>
+        <div class="price-tiers">
+          <div class="price-tier">
+            <div class="price-tier-val" style="text-decoration: line-through; color: #888;">₹1,800</div>
+          </div>
+          <div class="price-tier">
+            <div class="price-tier-val highlight">₹1,299</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section id="artists" class="section">
+    <div class="section-header reveal">
+      <h2>The<br>Artists</h2>
+      <div class="tag-uppercase text-accent">04 — The Team</div>
+    </div>
+    <div class="artist-grid">
+      <div class="artist-card reveal">
+        <div class="artist-img"><img
+            src="https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=1000&auto=format&fit=crop"
+            alt="Priya Nair"></div>
+        <h3 class="artist-name">Priya Nair</h3>
+        <span class="artist-spec">Hair & Colouring</span>
+        <span class="artist-exp">8 years · L'Oréal Certified</span>
+      </div>
+      <div class="artist-card reveal" style="transition-delay: 0.15s">
+        <div class="artist-img"><img
+            src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?q=80&w=1000&auto=format&fit=crop"
+            alt="Sangeetha R"></div>
+        <h3 class="artist-name">Sangeetha R.</h3>
+        <span class="artist-spec">Bridal & Makeup</span>
+        <span class="artist-exp">6 years · 200+ Brides</span>
+      </div>
+      <div class="artist-card reveal" style="transition-delay: 0.3s">
+        <div class="artist-img"><img
+            src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=1000&auto=format&fit=crop"
+            alt="Divya Lakshmi"></div>
+        <h3 class="artist-name">Divya Lakshmi</h3>
+        <span class="artist-spec">Skin & Nails</span>
+        <span class="artist-exp">5 years · VLCC Certified</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEFORE & AFTER -->
+  <section id="lookbook" class="section">
+    <div class="section-header reveal">
+      <h2>Before &<br>After</h2>
+      <div class="tag-uppercase text-accent">05 — Our Results</div>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-card reveal">
+        <div class="ba-panels">
+          <div class="ba-panel"><span class="ba-label">Before</span><img
+              src="https://images.unsplash.com/photo-1489679199345-200742ddb1eb?q=80&w=1000&auto=format&fit=crop"
+              alt="Before Balayage"></div>
+          <div class="ba-panel"><span class="ba-label">After</span><img
+              src="https://images.unsplash.com/photo-1519014816548-bf5fe059e98b?q=80&w=1000&auto=format&fit=crop"
+              alt="After Balayage"></div>
+        </div>
+        <h3 class="ba-service">Balayage Colour</h3>
+      </div>
+      <div class="ba-card reveal" style="transition-delay:0.1s">
+        <div class="ba-panels">
+          <div class="ba-panel"><span class="ba-label">Before</span><img
+              src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=1000&auto=format&fit=crop"
+              alt="Before Keratin"></div>
+          <div class="ba-panel"><span class="ba-label">After</span><img
+              src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1000&auto=format&fit=crop"
+              alt="After Keratin"></div>
+        </div>
+        <h3 class="ba-service">Keratin Treatment</h3>
+      </div>
+      <div class="ba-card reveal" style="transition-delay:0.2s">
+        <div class="ba-panels">
+          <div class="ba-panel"><span class="ba-label">Before</span><img
+              src="https://images.unsplash.com/photo-1542598953-41bb26bfd52a?q=80&w=1000&auto=format&fit=crop"
+              alt="Before Makeup"></div>
+          <div class="ba-panel"><span class="ba-label">After</span><img
+              src="https://images.unsplash.com/photo-1560869713-7d0a29430803?q=80&w=1000&auto=format&fit=crop"
+              alt="After Makeup"></div>
+        </div>
+        <h3 class="ba-service">Bridal Makeup</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="section section-dark">
+    <div class="section-header reveal">
+      <h2>Client<br>Love</h2>
+      <div class="tag-uppercase text-accent">06 — Testimonials</div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Priya gave me the exact balayage I showed her on Pinterest. I've tried three salons
+          before this and nobody got it right. Lumière got it on the first try."</p>
+        <span class="testi-name">Kavitha Sundar</span>
+        <span class="testi-role">Marketing Manager</span>
+      </div>
+      <div class="testi-card reveal" style="transition-delay:0.1s">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Sangeetha did my bridal makeup and I've never felt more beautiful. My family kept asking
+          who did it. Clean, hygienic, and genuinely caring staff."</p>
+        <span class="testi-name">Nithya Ramesh</span>
+        <span class="testi-role">Bride</span>
+      </div>
+      <div class="testi-card reveal" style="transition-delay:0.2s">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"The gold facial literally transformed my skin in one session. I come every month now.
+          The studio is so calm and clean — nothing like the usual salons."</p>
+        <span class="testi-name">Meenakshi Iyer</span>
+        <span class="testi-role">Software Engineer</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING / CONTACT -->
+  <section id="booking" class="section section-dark">
+    <div class="book-contact-grid">
+      <!-- Booking Form -->
+      <div>
+        <div class="booking-intro">
+          <h2 class="reveal"
+            style="font-family: var(--font-display); font-size: clamp(3rem, 6vw, 5rem); font-weight: 400; margin-bottom: 2rem;">
+            Reserve<br><em>A Space</em></h2>
+          <p class="reveal">Book your private consultation or service. We operate strictly by appointment to ensure
+            undivided attention.</p>
+        </div>
+        <form class="booking-form reveal">
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" id="name" placeholder=" " required>
+              <label for="name">Your Name</label>
+            </div>
+            <div class="form-group">
+              <input type="tel" id="phone" placeholder=" " required>
+              <label for="phone">Phone Number</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <select id="service" required>
+              <option value="" disabled selected></option>
+              <option value="hair-cut">Hair Cut & Styling</option>
+              <option value="hair-colouring">Hair Colouring</option>
+              <option value="bridal">Bridal Makeup</option>
+              <option value="facial">Facial & Skin Care</option>
+              <option value="nails">Nail Art</option>
+              <option value="keratin">Keratin Treatment</option>
+              <option value="combo">Combo Package</option>
+            </select>
+            <label for="service">Select Service</label>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <input type="date" id="date" placeholder=" " required>
+              <label for="date">Date</label>
+            </div>
+            <div class="form-group">
+              <select id="time" required>
+                <option value="" disabled selected></option>
+                <option>10:00 AM</option>
+                <option>11:00 AM</option>
+                <option>12:00 PM</option>
+                <option>1:00 PM</option>
+                <option>2:00 PM</option>
+                <option>3:00 PM</option>
+                <option>4:00 PM</option>
+                <option>5:00 PM</option>
+                <option>6:00 PM</option>
+              </select>
+              <label for="time">Time</label>
+            </div>
+          </div>
+          <button type="submit" class="submit-btn"
+            onclick="event.preventDefault(); alert('Booking interface active.')">Confirm Booking</button>
+          <a href="https://wa.me/9840000000" class="wa-btn" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+            Book on WhatsApp
+          </a>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="reveal" style="transition-delay: 0.2s;">
+        <h2
+          style="font-family: var(--font-display); font-size: clamp(3rem, 6vw, 5rem); font-weight: 400; margin-bottom: 2rem;">
+          Find<br><em>Us</em></h2>
+        <div class="contact-info">
+          <div class="contact-item">
+            <h4>Address</h4>
+            <p>24, 1st Street, Pallikaranai Main Road<br>Pallikaranai, Chennai – 600 100</p>
+          </div>
+          <div class="contact-item">
+            <h4>Hours</h4>
+            <p>Mon – Sat: 10:00 AM – 8:00 PM<br>Sunday: 10:00 AM – 6:00 PM</p>
+          </div>
+          <div class="contact-item">
+            <h4>Phone</h4>
+            <p>98400 XXXXX<br><span
+                style="color: var(--accent); font-size: 0.75rem; text-transform: uppercase; font-weight: 600; display: inline-block; margin-top:0.3rem;">WhatsApp
+                preferred</span></p>
+          </div>
+        </div>
+        <div class="map-box"><img
+            src="https://images.unsplash.com/photo-1524661135-423995f22f0b?q=80&w=1600&auto=format&fit=crop" alt="Map">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-logo">Lumière <span>Beauty</span> Studio</div>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#artists">Team</a>
+        <a href="#booking">Book</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Lumière Beauty Studio.</span>
+      <span>Pallikaranai, Chennai.</span>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
 </body>
+
 </html>
